@@ -1,0 +1,19 @@
+$token = '999999999:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+
+get id info
+    https://api.telegram.org/bot???:??????/getMe
+
+發送訊息
+    https://api.telegram.org/bot???:??????/sendMessage?chat_id=xxxxxx&text=hello
+
+取得所有發送到 bot 的 訊息
+    https://api.telegram.org/bot???:??????/getUpdates
+
+set hook
+    https://api.telegram.org/bot???:??????/setWebhook?url=https%3A%2F%2Fwww.xxxxxx.com.tw%2Fxxxxxx%2F
+delete hook
+    https://api.telegram.org/bot???:??????/setWebhook?url=
+
+設定 certificate 的方式, .crt or .pem (fail)
+    curl -F "url=https://xxxx/xx.php" -F "certificate=@file.pem" https://api.telegram.org/xxxx/setWebhook
+

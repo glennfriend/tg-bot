@@ -1,0 +1,38 @@
+{
+    "require" : {
+        "slim/slim": "3.*",
+        "symfony/dependency-injection": "3.*",
+        "zendframework/zend-db": "2.*",
+        "doctrine/cache": "1.*",
+
+        "irazasyed/telegram-bot-sdk": "2.*",
+        "nette/mail": "2.2.*",
+
+        "lib": "*",
+        "helper": "*",
+        "bridge": "*",
+        "api": "*"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../app/Api"
+        },
+        {
+            "type": "path",
+            "url": "../app/Bridge"
+        },
+        {
+            "type": "path",
+            "url": "../app/Helper"
+        },
+        {
+            "type": "path",
+            "url": "../app/Lib"
+        }
+    ],
+    "autoload": {
+        "classmap": []
+    }
+    
+}

@@ -1,0 +1,9 @@
+{
+    "version":  "1.0.0",
+    "name":     "Api",
+    "autoload": {
+        "psr-4": {
+            "Api\\": ""
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "version":  "1.0.0",
+    "name":     "Helper",
+    "autoload": {
+        "psr-4": {
+            "Helper\\": ""
+        }
+    }
+}
