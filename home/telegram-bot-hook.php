@@ -5,20 +5,21 @@ initialize($basePath);
 
 $input = file_get_contents("php://input");
 $data = json_decode($input, true);
-if (!is_array($update)) {
-    exit;
-}
-if (!is_array($update['message'])) {
-    exit;
-}
 
 
 if (true) {
     $content  = date("Y-m-d H:i:s") . "\n";
-    $content .= print_r($update, true);
+    $content .= print_r($data, true);
     file_put_contents( 'log.log', $content."\n", FILE_APPEND );
 }
 
+
+if (!is_array($data)) {
+    exit;
+}
+if (!is_array($data['message'])) {
+    exit;
+}
 
 // add
 $type = $data['message']['caht']['type'];
@@ -34,7 +35,7 @@ $message->setChatId             ($data['message']['chat']['id']         );
 $message->setContent            ($data['message']['text']               );
 $message->setCreateMessageTime  ($data['message']['date']               );
 
-if ('grup'===$type)) {
+if ('group'===$type) {
     $message->setChatTitle($data['message']['chat']['title']);
 }
 
