@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `chat_title` varchar(40) NOT NULL,
   `content` text NOT NULL,
   `create_message_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `is_execute` tinyint(3) unsigned NOT NULL,
+  `is_used` tinyint(1) unsigned NOT NULL,
   `properties` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

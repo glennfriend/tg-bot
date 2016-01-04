@@ -37,7 +37,7 @@ class Messages extends ZendModel
         $object->setChatTitle         ( $row['chat_title']                      );
         $object->setContent           ( $row['content']                         );
         $object->setCreateMessageTime ( strtotime($row['create_message_time'])  );
-        $object->setIsExecute         ( $row['is_execute']                      );
+        $object->setIsUsed            ( $row['is_used']                         );
         $object->setProperties        ( unserialize($row['properties'])         );
         return $object;
     }
@@ -220,7 +220,7 @@ class Messages extends ZendModel
                 'chatTitle'         => 'chat_title',
                 'content'           => 'content',
                 'createMessageTime' => 'create_message_time',
-                'isExecute'         => 'is_execute',
+                'isUsed'            => 'is_used',
                 'properties'        => 'properties',
             ],
             'option' => [
@@ -268,8 +268,8 @@ class Messages extends ZendModel
         if ( isset($opt['content']) ) {
             $select->where->and->like( $field['content'], '%'.$opt['content'].'%' );
         }
-        if ( isset($opt['isExecute']) ) {
-            $select->where->and->equalTo( $field['isExecute'], $opt['isExecute'] );
+        if ( isset($opt['isUsed']) ) {
+            $select->where->and->equalTo( $field['isUsed'], $opt['isUsed'] );
         }
 
         if ( !$isGetCount ) {

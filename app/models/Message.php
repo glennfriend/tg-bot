@@ -81,12 +81,12 @@ class Message extends BaseObject
                 'field'   => 'create_message_time',
                 'value'   => 0,
             ],
-            'isExecute' => [
+            'isUsed' => [
                 'type'    => 'integer',
                 'filters' => ['intval'],
-                'storage' => 'getIsExecute',
-                'field'   => 'is_execute',
-                'value'   => self::IS_EXECUTE_OPEN,
+                'storage' => 'getIsUsed',
+                'field'   => 'is_used',
+                'value'   => false,
             ],
             'properties' => [
                 'type'    => 'string',
@@ -116,13 +116,31 @@ class Message extends BaseObject
      */
     public static function getDisabledMethods()
     {
-        // return ['setIpn','setCustomSearch'];
-        return [];
+        return ['getIsUsed'];
     }
 
     /* ------------------------------------------------------------------------------------------------------------------------
         extends
     ------------------------------------------------------------------------------------------------------------------------ */
+
+    public function setIsUsed($type)
+    {
+        if ( true === $type || 1 === $type) {
+            $this->store['is_used'] = true;
+        }
+        $this->store['is_used'] = false;
+    }
+
+    /**
+     *  是否已執行過
+     */
+    public function isUsed()
+    {
+        if (true === $this->store['is_used']) {
+            return true;
+        }
+        return false;
+    }
 
     /* ------------------------------------------------------------------------------------------------------------------------
         lazy loading methods
