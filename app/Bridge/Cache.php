@@ -54,7 +54,6 @@ class Cache implements Tie\Cache
 
     /**
      *  remove cache by prefix
-     *  移除該值開頭的所有快取
      */
     public static function removePrefix($prefix)
     {
