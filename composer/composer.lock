@@ -4,22 +4,22 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9abdf47f4b3efae4aada0e102b3f2888",
-    "content-hash": "128f4eba7a3c79dd57d16a279773e3a2",
+    "hash": "48aeaf5ed67ab5118d1fa3767e596580",
+    "content-hash": "148261c034d2a15863ac92d95652be56",
     "packages": [
         {
-            "name": "Api",
+            "name": "AppController",
             "version": "1.0.0",
             "dist": {
                 "type": "path",
-                "url": "../app/Api/",
-                "reference": "",
+                "url": "../app/AppController/",
+                "reference": "2567c8e6268dec1ca7aca8c1b9dbc5ea",
                 "shasum": null
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Api\\": ""
+                    "AppController\\": ""
                 }
             }
         },

@@ -24,5 +24,5 @@ return array(
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Bridge\\' => array($vendorDir . '/Bridge'),
-    'Api\\' => array($vendorDir . '/Api'),
+    'AppController\\' => array($vendorDir . '/AppController'),
 );

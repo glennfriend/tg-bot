@@ -1,5 +1,5 @@
 <?php
-namespace Api\Tool;
+namespace AppController\Tool;
 
 class LoadFunctions
 {
@@ -13,7 +13,7 @@ class LoadFunctions
         self::$response = $response;
         self::$args     = $args;
 
-        include "apiHelper.php";
+        include "appControllerHelper.php";
     }
 }
 

@@ -11,12 +11,12 @@
         "lib": "*",
         "helper": "*",
         "bridge": "*",
-        "api": "*"
+        "AppController": "*"
     },
     "repositories": [
         {
             "type": "path",
-            "url": "../app/Api"
+            "url": "../app/AppController"
         },
         {
             "type": "path",

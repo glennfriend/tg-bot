@@ -10,11 +10,11 @@ initialize($basePath);
         - ajax    時輸出 json type (使用狀態)
 */
 $app = new Slim\App(getDefaultSlimConfig());
-$app->get('/just-test',             'Api\JustTest:hello');
-$app->get('/just-test-send',        'Api\JustTest:send');
-$app->get('/set-webhook/{status}',  'Api\Setting:webhook');
-$app->get('/list',                  'Api\Info:getItems');
-$app->get('/info',                  'Api\Info:about');
+$app->get('/just-test',             'AppController\JustTest:hello');
+$app->get('/just-test-send',        'AppController\JustTest:send');
+$app->get('/set-webhook/{status}',  'AppController\Setting:webhook');
+$app->get('/list',                  'AppController\Info:getItems');
+$app->get('/info',                  'AppController\Info:about');
 
 $app->run();
 

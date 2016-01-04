@@ -1,9 +1,9 @@
 {
     "version":  "1.0.0",
-    "name":     "Api",
+    "name":     "AppController",
     "autoload": {
         "psr-4": {
-            "Api\\": ""
+            "AppController\\": ""
         }
     }
 }

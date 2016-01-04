@@ -638,24 +638,6 @@
         ]
     },
     {
-        "name": "Api",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "dist": {
-            "type": "path",
-            "url": "../app/Api/",
-            "reference": "",
-            "shasum": null
-        },
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Api\\": ""
-            }
-        }
-    },
-    {
         "name": "symfony/dependency-injection",
         "version": "v3.0.1",
         "version_normalized": "3.0.1.0",
@@ -1143,5 +1125,23 @@
         ],
         "description": "The Illuminate Support package.",
         "homepage": "http://laravel.com"
+    },
+    {
+        "name": "AppController",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "dist": {
+            "type": "path",
+            "url": "../app/AppController/",
+            "reference": "2567c8e6268dec1ca7aca8c1b9dbc5ea",
+            "shasum": null
+        },
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "AppController\\": ""
+            }
+        }
     }
 ]

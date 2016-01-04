@@ -100,7 +100,7 @@ function pr($data, $writeLog=false)
 
 /**
  *  包裝了 Symfony Dependency-Injection
- *  提供了簡易的取用方式 DI->get( $getParam )
+ *  提供了簡易的取用方式 DI->get( $service )
  */
 function di($getParam=null)
 {

@@ -1,10 +1,10 @@
 <?php
-namespace Api;
+namespace AppController;
 
 /**
  *
  */
-class JustTest extends BaseApi
+class JustTest extends BaseController
 {
 
     /**

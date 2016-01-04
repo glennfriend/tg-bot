@@ -1,10 +1,10 @@
 <?php
-namespace Api;
+namespace AppController;
 
 /**
  *
  */
-class Info extends BaseApi
+class Info extends BaseController
 {
 
     /**
