@@ -101,6 +101,12 @@ class ZendModel
         $adapter = $this->getAdapter();
         $zendSql = new Zend\Db\Sql\Sql($adapter);
 
+        if (isTraining()) {
+            Bridge\Log::sql(
+                $select->getSqlString( $adapter->getPlatform() )
+            );
+        }
+
         $this->error = null;
         try {
             $statement = $zendSql->prepareStatementForSqlObject($select);
@@ -126,6 +132,10 @@ class ZendModel
     {
         $adapter = $this->getAdapter();
         $sql = $write->getSqlString( $adapter->getPlatform() );
+
+        if (isTraining()) {
+            Bridge\Log::sql($sql);
+        }
 
         $this->error = null;
         try {

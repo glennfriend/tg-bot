@@ -108,16 +108,6 @@ class Messages extends ZendModel
     {
         // first, remove cache
         $this->removeCache($object);
-
-        // second do something
-        // 因為自身修改的影響, 必須要修改其它資料表記錄的欄位值
-        /*
-            // 例如 add article comment , 則 article of num_comments field 要做更新
-            $article = $object->getArticle();
-            $article->setNumComments( $this->getNumArticleComments( $article->getId() ) );
-            $articles = new Articles();
-            $articles->updateArticle($article);
-        */
     }
 
     /**
