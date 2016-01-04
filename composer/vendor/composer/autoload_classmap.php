@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'BaseObject' => $baseDir . '/../app/models/BaseObject.php',
+    'Message' => $baseDir . '/../app/models/Message.php',
+    'Messages' => $baseDir . '/../app/models/Messages.php',
     'Nette\\ArgumentOutOfRangeException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\DeprecatedException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\DirectoryNotFoundException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
@@ -51,4 +54,6 @@ return array(
     'Nette\\Utils\\Strings' => $vendorDir . '/nette/utils/src/Utils/Strings.php',
     'Nette\\Utils\\UnknownImageFileException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\Utils\\Validators' => $vendorDir . '/nette/utils/src/Utils/Validators.php',
+    'ZendModel' => $baseDir . '/../app/models/ZendModel.php',
+    'ZendModelWhiteListHelper' => $baseDir . '/../app/models/ZendModelWhiteListHelper.php',
 );
