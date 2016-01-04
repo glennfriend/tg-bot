@@ -116,7 +116,7 @@ class Message extends BaseObject
      */
     public static function getDisabledMethods()
     {
-        return ['getIsUsed'];
+        return [];
     }
 
     /* ------------------------------------------------------------------------------------------------------------------------
@@ -132,9 +132,11 @@ class Message extends BaseObject
     }
 
     /**
-     *  是否已執行過
+     *  是否已完成該指令
+     *      - true  -> 已完成該指令的動作
+     *      - false -> 未執行過的指令
      */
-    public function isUsed()
+    public function getIsUsed()
     {
         if (true === $this->store['is_used']) {
             return true;

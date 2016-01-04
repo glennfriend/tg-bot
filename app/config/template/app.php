@@ -14,7 +14,7 @@ return [
      *      training    - 開發者環境
      *      production  - 正式環境
      */
-    'env' => 'training',
+    'env' => 'production',
 
     /**
      *  app path
