@@ -102,7 +102,7 @@ class ZendModel
         $zendSql = new Zend\Db\Sql\Sql($adapter);
 
         if (isTraining()) {
-            Bridge\Log::sql(
+            di('log')->sql(
                 $select->getSqlString( $adapter->getPlatform() )
             );
         }
@@ -134,7 +134,7 @@ class ZendModel
         $sql = $write->getSqlString( $adapter->getPlatform() );
 
         if (isTraining()) {
-            Bridge\Log::sql($sql);
+            di('log')->sql($sql);
         }
 
         $this->error = null;

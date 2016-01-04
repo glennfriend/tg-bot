@@ -36,6 +36,15 @@ class Log
         self::write( 'system.log', $content );
     }
 
+    /**
+     *  sql log
+     */
+    public static function sql($content)
+    {
+        $content = date("Y-m-d H:i:s") .' - '. $content;
+        self::write('debug-sql.log', $content);
+    }
+
     /* --------------------------------------------------------------------------------
         private
     -------------------------------------------------------------------------------- */
