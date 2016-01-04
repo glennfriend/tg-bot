@@ -6,11 +6,9 @@ initialize($basePath);
 $input = file_get_contents("php://input");
 $data = json_decode($input, true);
 
-
-if (true) {
-    $content  = date("Y-m-d H:i:s") . "\n";
-    $content .= print_r($data, true);
-    file_put_contents( 'log.log', $content."\n", FILE_APPEND );
+if (isTraining()) {
+    $content = print_r($data, true);
+    di('log')->write('telegram-bot-hook.log', $content);
 }
 
 
@@ -22,7 +20,7 @@ if (!is_array($data['message'])) {
 }
 
 // add
-$type = $data['message']['caht']['type'];
+$type = $data['message']['chat']['type'];
 
 $message = new Message();
 $message->setMessageId          ($data['message']['message_id']         );
