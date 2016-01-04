@@ -17,7 +17,9 @@ class Setting extends BaseApi
             case 'on':
                 // TODO: 未測試!!
                 $telegram = new \Telegram\Bot\Api(conf('bot.token'));
-                $response = $telegram->setWebhook(conf('bot.hook_file'));
+                $response = $telegram->setWebhook([
+                    'url' => conf('bot.hook_file')
+                ]);
                 put( $response );
                 exit;
 
@@ -26,7 +28,9 @@ class Setting extends BaseApi
                 $response = $telegram->removeWebhook();
                 put( $response->getDecodedBody() );
                 exit;
+
             default:
+                break;
         }
         put('fail');
     }
