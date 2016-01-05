@@ -79,9 +79,9 @@ class ZendModel
                 
         self::$adapter = new Zend\Db\Adapter\Adapter(array(
             'driver'    => 'Pdo_Mysql',
-            'dsn'       => 'mysql:host='. Lib\Config::get('db.mysql.host') .';dbname='. Lib\Config::get('db.mysql.db'),
-            'username'  => Lib\Config::get('db.mysql.user'),
-            'password'  => Lib\Config::get('db.mysql.pass'),
+            'dsn'       => 'mysql:host='. conf('db.mysql.host') .';dbname='. conf('db.mysql.db'),
+            'username'  => conf('db.mysql.user'),
+            'password'  => conf('db.mysql.pass'),
             'driver_options' => array(
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
             )
@@ -319,7 +319,7 @@ class ZendModel
     {
         $orderBy      = isset($option['_order'])        ? $option['_order']        : '' ;
         $page         = isset($option['_page'])         ? $option['_page']         : 1  ;
-        $itemsPerPage = isset($option['_itemsPerPage']) ? $option['_itemsPerPage'] : Config::get('db.items_per_page');
+        $itemsPerPage = isset($option['_itemsPerPage']) ? $option['_itemsPerPage'] : conf('db.items_per_page');
 
         if ( $orderBy ) {
             $select->order( trim($orderBy) );

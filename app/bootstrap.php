@@ -14,7 +14,7 @@ function initialize($basePath)
     require_once $basePath . '/composer/vendor/autoload.php';
 
     // init config
-    Lib\Config::init( $basePath . '/app/config');
+    ConfigManager::init( $basePath . '/app/config');
     if ( conf('app.path') !== $basePath ) {
        pr('base path setting error!');
        exit;
@@ -72,7 +72,7 @@ function isTraining()
 
 function conf($key)
 {
-    return Lib\Config::get($key);
+    return ConfigManager::get($key);
 }
 
 function pr($data, $writeLog=false)

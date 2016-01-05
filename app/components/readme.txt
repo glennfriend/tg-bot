@@ -28,6 +28,7 @@ Formatter
 Manager
     管理特定性質的資訊
     可以設定參數
+    通常會有 __construct() or init() or set param 參數 之類的 method
     取得沿伸之後的功能或是回傳值
 
 Identity

@@ -1,11 +1,9 @@
 <?php
 
-namespace Lib;
-
 /**
- *  Config Manager
+ *
  */
-class Config
+class ConfigManager
 {
 
     /**
@@ -38,7 +36,7 @@ class Config
      *  同 soft
      *  如果資料不存在 或是值為 null, 直接顯示錯誤訊息
      *
-     *  @see Config::get()
+     *  @see ConfigManager::get()
      *  @param int|string - $key
      *  @return any
      */
