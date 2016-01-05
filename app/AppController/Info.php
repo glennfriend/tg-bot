@@ -65,12 +65,6 @@ class Info extends BaseController
         $telegram = new \Telegram\Bot\Api(conf('bot.token'));
         $updates = $telegram->getWebhookUpdates();
         print_r($updates);
-        return;
-
-        if (!$updates) {
-            // ?
-        }
-
     }
 
 }

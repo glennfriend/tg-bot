@@ -8,7 +8,9 @@ $data = json_decode($input, true);
 
 if (isTraining()) {
     $content = print_r($data, true);
-    di('log')->write('telegram-bot-hook.log', $content);
+    if ($content) {
+        di('log')->write('telegram-bot-hook.log', $content);
+    }
 }
 
 
