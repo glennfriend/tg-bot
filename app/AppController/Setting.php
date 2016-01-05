@@ -26,12 +26,10 @@ class Setting extends BaseController
                 return;
 
             case 'off':
-                put('目前不提供該 關閉 web hook 的指令');
-                /*
+                // 該指令關閉 web hook, 通常用於開發環境
                 $telegram = new \Telegram\Bot\Api(conf('bot.token'));
                 $response = $telegram->removeWebhook();
                 put( $response->getDecodedBody() );
-                */
                 return;
 
             default:

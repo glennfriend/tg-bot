@@ -121,10 +121,10 @@ class Messages extends ZendModel
         }
 
         $cacheKey = $this->getFullCacheKey( $object->getId(), Messages::CACHE_MESSAGE );
-        CacheBrg::remove( $cacheKey );
+        di('cache')->remove( $cacheKey );
 
         $cacheKey = $this->getFullCacheKey( $object->getUserId(), Messages::CACHE_MESSAGE_MESSAGE_ID );
-        CacheBrg::remove( $cacheKey );
+        di('cache')->remove( $cacheKey );
     }
 
 

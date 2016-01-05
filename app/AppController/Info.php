@@ -37,21 +37,15 @@ class Info extends BaseController
     {
         $telegram = new \Telegram\Bot\Api(conf('bot.token'));
         $updates = $telegram->getUpdates();
+        $messages = new \Messages();
 
-        $infos = [];
+        $result = [];
         foreach ($updates as $update) {
-            $message = $update->getMessage();
-            $infos[] = [
-                'update_id'     => $update->getUpdateId(),
-                'message_id'    => $message->getMessageId(),
-                'user_id'       => $message->getFrom()->getId(),
-                'chat_id'       => $message->getChat()->getId(),
-                'date'          => $message->getDate(),
-                'date_format'   => date("Y-m-d H:i:s", $message->getDate()),
-                'text'          => $message->getText(),
-            ];
+            $message = \MessageHelper::makeMessageByTelegramUpdate($update);
+            $result[] = $messages->addMessage($message);
         }
-        put($infos);
+
+        put($result);
     }
 
     /**
@@ -59,25 +53,15 @@ class Info extends BaseController
      */
     protected function getHookItems()
     {
-        // TODO: 未經測試
-        exit;
-
         $telegram = new \Telegram\Bot\Api(conf('bot.token'));
         $updates = $telegram->getWebhookUpdates();
         print_r($updates);
-        exit;
+        return;
 
         if (!$updates) {
             // ?
         }
 
     }
-
-/*
-    protected function _about()
-    {
-        print_r( attrib('name') );
-    }
-*/
 
 }
