@@ -36,9 +36,15 @@ class Info extends BaseController
     protected function getItems()
     {
         $telegram = new \Telegram\Bot\Api(conf('bot.token'));
-        $updates = $telegram->getUpdates();
-        $messages = new \Messages();
+        try {
+            $updates = $telegram->getUpdates();
+        }
+        catch(\Telegram\Bot\Exceptions\TelegramResponseException $e) {
+            put($e->getMessage());
+            return;
+        }
 
+        $messages = new \Messages();
         $result = [];
         foreach ($updates as $update) {
             $message = \MessageHelper::makeMessageByTelegramUpdate($update);
@@ -53,6 +59,9 @@ class Info extends BaseController
      */
     protected function getHookItems()
     {
+        put('暫不開放.');
+        return;
+
         $telegram = new \Telegram\Bot\Api(conf('bot.token'));
         $updates = $telegram->getWebhookUpdates();
         print_r($updates);
