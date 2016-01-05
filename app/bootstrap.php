@@ -46,7 +46,7 @@ function getDefaultSlimConfig()
 
             $error = json_encode([
                 'error' => [
-                    'code'    => '100',
+                    'code'    => '4001',
                     'message' => 'Page not found',
                 ]
             ]);
@@ -122,18 +122,23 @@ function di($getParam=null)
 function diInit()
 {
     $di = di();
-    $basePath = conf('app.path');
 
-    // log folder
-    $di->setDefinition('log', new DependencyInjection\Definition(
-        'Lib\Log'
-    ));
-    $di->get('log')->init( $basePath . '/var' );
+    // $basePath = conf('app.path');
+
+    $di->setParameter('app.path', conf('app.path') );
+
+    /*
+    $di->register('abc', 'Lib\Abc')
+        ->addArgument('%app.path%');                    // __construct
+        ->setProperty('setDb', [new Reference('db')]);  // ??
+    */
+
+    // log & log folder
+    $di->register('log', 'Lib\Log')
+        ->addMethodCall('init', ['%app.path%/var']);
 
     // cache
-    $di->setDefinition('cache', new DependencyInjection\Definition(
-        'Bridge\Cache'
-    ));
-    $di->get('cache')->init( $basePath . '/var/cache' );
+    $di->register('cache', 'Bridge\Cache')
+        ->addMethodCall('init', ['%app.path%/var/cache']);
 
 }
