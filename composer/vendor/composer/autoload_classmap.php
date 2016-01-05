@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'BaseObject' => $baseDir . '/../app/models/BaseObject.php',
     'Message' => $baseDir . '/../app/models/Message.php',
+    'MessageHelper' => $baseDir . '/../app/models/MessageHelper.php',
     'Messages' => $baseDir . '/../app/models/Messages.php',
     'Nette\\ArgumentOutOfRangeException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\DeprecatedException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',

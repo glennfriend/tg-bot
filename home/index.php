@@ -15,6 +15,8 @@ $app->get('/just-test-send',        'AppController\JustTest:send');
 $app->get('/set-webhook/{status}',  'AppController\Setting:webhook');
 $app->get('/list',                  'AppController\Info:getItems');
 $app->get('/info',                  'AppController\Info:about');
+$app->get('/update',                'AppController\Info:getItems');
+$app->get('/hook-update',           'AppController\Info:getHookItems');
 
 $app->run();
 

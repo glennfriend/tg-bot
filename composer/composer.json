@@ -9,7 +9,6 @@
         "nette/mail": "2.2.*",
 
         "lib": "*",
-        "helper": "*",
         "bridge": "*",
         "AppController": "*"
     },
@@ -24,16 +23,15 @@
         },
         {
             "type": "path",
-            "url": "../app/Helper"
-        },
-        {
-            "type": "path",
             "url": "../app/Lib"
         }
     ],
     "autoload": {
         "classmap": [
-            "../app/models"
+            "../app/models",
+            "../app/components/helper",
+            "../app/components/manager",
+            "../app/components/module"
         ]
     }
 }

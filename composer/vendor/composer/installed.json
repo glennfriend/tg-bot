@@ -315,24 +315,6 @@
         }
     },
     {
-        "name": "Helper",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "dist": {
-            "type": "path",
-            "url": "../app/Helper/",
-            "reference": "",
-            "shasum": null
-        },
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Helper\\": ""
-            }
-        }
-    },
-    {
         "name": "Bridge",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",

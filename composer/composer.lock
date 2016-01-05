@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "48aeaf5ed67ab5118d1fa3767e596580",
-    "content-hash": "148261c034d2a15863ac92d95652be56",
+    "hash": "c54e483b5438a6d5204932f1c7ecd55f",
+    "content-hash": "c3e6b06caa329b16cc89d219267374fc",
     "packages": [
         {
             "name": "AppController",
@@ -36,22 +36,6 @@
             "autoload": {
                 "psr-4": {
                     "Bridge\\": ""
-                }
-            }
-        },
-        {
-            "name": "Helper",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "../app/Helper/",
-                "reference": "",
-                "shasum": null
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Helper\\": ""
                 }
             }
         },

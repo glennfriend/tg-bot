@@ -15,26 +15,10 @@ if (isTraining()) {
 if (!is_array($data)) {
     exit;
 }
-if (!is_array($data['message'])) {
+
+$message = MessageHelper::makeMessageByArray($data);
+if (!$message) {
     exit;
-}
-
-// add
-$type = $data['message']['chat']['type'];
-
-$message = new Message();
-$message->setMessageId          ($data['message']['message_id']         );
-$message->setUpdateId           ($data['update_id']                     );
-$message->setUserId             ($data['message']['from']['id']         );
-$message->setFirstName          ($data['message']['from']['first_name'] );
-$message->setLastName           ($data['message']['from']['last_name']  );
-$message->setChatType           ($type                                  );
-$message->setChatId             ($data['message']['chat']['id']         );
-$message->setContent            ($data['message']['text']               );
-$message->setCreateMessageTime  ($data['message']['date']               );
-
-if ('group'===$type) {
-    $message->setChatTitle($data['message']['chat']['title']);
 }
 
 $messages = new Messages();
