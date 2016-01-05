@@ -116,14 +116,15 @@ function di($getParam=null)
 }
 
 /**
- *
+ *  @see https://github.com/symfony/dependency-injection
+ *  @see http://symfony.com/doc/current/components/dependency_injection/factories.html
+ *  @see http://symfony.com/doc/current/components/dependency_injection/introduction.html
  */
 function diInit()
 {
-    $di = di();
-
     // $basePath = conf('app.path');
 
+    $di = di();
     $di->setParameter('app.path', conf('app.path') );
 
     /*
