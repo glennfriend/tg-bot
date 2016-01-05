@@ -1,5 +1,4 @@
 <?php
-use Symfony\Component\DependencyInjection;
 
 function initialize($basePath)
 {
@@ -112,8 +111,8 @@ function di($getParam=null)
         return $container;
     }
 
-    $container = new DependencyInjection\ContainerBuilder();
-    return $container;
+    // container
+    return new Symfony\Component\DependencyInjection\ContainerBuilder();
 }
 
 /**
