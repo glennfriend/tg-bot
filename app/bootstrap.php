@@ -111,8 +111,8 @@ function di($getParam=null)
         return $container;
     }
 
-    // container
-    return new Symfony\Component\DependencyInjection\ContainerBuilder();
+    $container = new Symfony\Component\DependencyInjection\ContainerBuilder();
+    return $container;
 }
 
 /**
@@ -134,7 +134,7 @@ function diInit()
     */
 
     // log & log folder
-    $di->register('log', 'Lib\Log')
+    $di->register('log', 'Bridge\Log')
         ->addMethodCall('init', ['%app.path%/var']);
 
     // cache

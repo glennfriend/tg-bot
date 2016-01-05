@@ -1,6 +1,5 @@
 <?php
-
-namespace Lib;
+namespace Bridge;
 
 class Log
 {
@@ -15,25 +14,34 @@ class Log
         self::$_logPath = $logPath;
     }
 
+    /* --------------------------------------------------------------------------------
+        access
+    -------------------------------------------------------------------------------- */
+
     /**
      *  error log
      */
     public static function getPath()
     {
         if (null === self::$_logPath) {
-            die('error - 6324734905763409573498546345634853453429403');
+            throw new Exception('Error: Log path empty');
+            exit;
         }
 
         return self::$_logPath;
     }
 
+    /* --------------------------------------------------------------------------------
+        write
+    -------------------------------------------------------------------------------- */
+
     /**
      *  system log
      */
-    public static function record( $content )
+    public static function record($content)
     {
         $content = date("Y-m-d H:i:s") . ' - '. $content;
-        self::write( 'system.log', $content );
+        self::write('system.log', $content );
     }
 
     /**
@@ -52,7 +60,7 @@ class Log
     /**
      *  write file
      */
-    public static function write( $file, $content )
+    public static function write($file, $content)
     {
         if (!preg_match('/^[a-z0-9_\-\.]+$/i', $file)) {
             return;

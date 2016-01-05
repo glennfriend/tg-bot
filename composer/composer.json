@@ -8,7 +8,6 @@
         "irazasyed/telegram-bot-sdk": "2.*",
         "nette/mail": "2.2.*",
 
-        "lib": "*",
         "bridge": "*",
         "AppController": "*"
     },
@@ -20,10 +19,6 @@
         {
             "type": "path",
             "url": "../app/Bridge"
-        },
-        {
-            "type": "path",
-            "url": "../app/Lib"
         }
     ],
     "autoload": {
