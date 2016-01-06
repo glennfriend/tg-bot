@@ -37,6 +37,7 @@ class ErrorSupportHelper
         switch ($code) {
             case '4001': return 'Page not found';
             case '4002': return 'Can not run in production environment';
+            case '4003': return 'get getMe() fail';
         }
         throw new Exception('Error support code error');
     }

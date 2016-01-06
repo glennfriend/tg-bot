@@ -1,5 +1,6 @@
 <?php
 namespace CommandController;
+use BotHelper;
 
 /**
  *
@@ -12,22 +13,63 @@ class Enter
      */
     public function home($id)
     {
-        di('log')->record("--start-- {$id}");
-
         $messages = new \Messages();
         $message = $messages->getMessage($id);
+        $this->_validateMessage($message);
 
-        /*
-            處理 message 物件
-                - 決定是否要設定 is used
-                - 是否要處理, 另外 call controller
-                - 是否不處理
-                - 回傳至 user or chat
-                    - 目前想法是, 只要 user 是白名單, 就傳
-                    - 目前想法是, chat 裡面有一個白名單, 就傳
-        */
+        list($command, $content) = $message->parseCommand();
+        switch ($command) {
+            case 'help':
+                $controller = new \CommandController\ToHelp();
+                break;
+            default:
+                $controller = new \CommandController\ToDefault();
+        }
 
-        di('log')->record('--end--');
+        $text = $controller->perform($message);
+        if (!$text) {
+            return;
+        }
+
+        // send text
+        $chatId = $message->getChatId();
+        $messageId = BotHelper::sendMessage($chatId, $text);
+        if (!$messageId) {
+            di('log')->record("send fail: message id = {$message->getId()}");
+        }
+    }
+
+    /**
+     *  validate message
+     */
+    protected function _validateMessage($message)
+    {
+        if (!$message) {
+            di('log')->record("message not found at " . date('Y-m-d H:i:s'));
+            exit;
+        }
+
+        // 已處理過的 message 將不再處理
+        if ($message->getIsUsed()) {
+            di('log')->record("message {$id} is used");
+            exit;
+        }
+
+        // 回應的 chat_id 必須在白名單之內
+        $chatId = $message->getChatId();
+        $allowIds = conf('bot.allow_chat_ids');
+        if (!in_array($chatId, $allowIds)) {
+            di('log')->record("message can not allow send to {$chatId} ({$message->getName()})");
+
+            // debug 使用 -> 如果不在予許的名單內, 發送警告訊息
+            if (isTraining()) {
+                $userId = $message->getUserId();
+                $text   = '您不在白名單之內 by BOT';
+                BotHelper::sendMessage($userId, $text);
+            }
+            exit;
+        }
+
     }
 
 }

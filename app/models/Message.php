@@ -144,6 +144,41 @@ class Message extends BaseObject
         return false;
     }
 
+    /**
+     *  get full name
+     */
+    public function getName()
+    {
+        return $this->getFirstName() . ' ' . $this->getLastName();
+    }
+
+    /**
+     *  解析最基本的命令
+     *      - 參數1 為 命令名稱
+     *      - 參數2 為 命令內容
+     *
+     *  @return array
+     */
+    public function parseCommand()
+    {
+        $tmp = explode(' ', $this->getContent());
+        if (!$tmp || !is_array($tmp) ) {
+            return [null, null];
+        }
+
+        $command = '';
+        if ('/'===substr($tmp[0],0,1)) {
+            $command = substr($tmp[0],1);
+        }
+
+        unset($tmp[0]);
+        $body = join(' ',$tmp);
+        return [
+            strtolower($command),
+            $body
+        ];
+    }
+
     /* ------------------------------------------------------------------------------------------------------------------------
         lazy loading methods
     ------------------------------------------------------------------------------------------------------------------------ */

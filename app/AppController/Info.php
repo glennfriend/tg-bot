@@ -1,5 +1,6 @@
 <?php
 namespace AppController;
+use ErrorSupportHelper;
 
 /**
  *
@@ -15,13 +16,8 @@ class Info extends BaseController
         $telegram = new \Telegram\Bot\Api(conf('bot.token'));
 
         $info = $telegram->getMe();
-        if (!$info) {
-            $error = [
-                'error' => [
-                    'code'    => '100',
-                    'message' => 'get getMe() fail',
-                ]
-            ];
+        if ($info) {
+            $error = ErrorSupportHelper::get('4003');
             put($error);
             return;
         }
