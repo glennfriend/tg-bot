@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'BaseObject' => $baseDir . '/../app/models/BaseObject.php',
     'ConfigManager' => $baseDir . '/../app/components/manager/ConfigManager.php',
+    'ErrorSupportHelper' => $baseDir . '/../app/components/helper/ErrorSupportHelper.php',
     'Message' => $baseDir . '/../app/models/Message.php',
     'MessageHelper' => $baseDir . '/../app/models/MessageHelper.php',
     'Messages' => $baseDir . '/../app/models/Messages.php',

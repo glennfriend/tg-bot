@@ -1107,5 +1107,23 @@
                 "AppController\\": ""
             }
         }
+    },
+    {
+        "name": "CommandController",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "dist": {
+            "type": "path",
+            "url": "../app/CommandController/",
+            "reference": "2c46cd550debf823ad96f3c7bf309047",
+            "shasum": null
+        },
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CommandController\\": ""
+            }
+        }
     }
 ]

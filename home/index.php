@@ -16,9 +16,4 @@ $app->get('/set-webhook/{status}',  'AppController\Setting:webhook');
 $app->get('/list',                  'AppController\Info:getItems');
 $app->get('/info',                  'AppController\Info:about');
 
-// 開發環境不使用 web hook, 請自行觸發程式
-$app->get('/update',                'AppController\Info:getItems');
-
-
 $app->run();
-

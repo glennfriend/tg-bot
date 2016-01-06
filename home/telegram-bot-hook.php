@@ -1,4 +1,9 @@
 <?php
+/**
+ *  該程式只能在 production 環境使用
+ *      - 必須使用 web hook
+ *
+ */
 $basePath = dirname(__DIR__);
 require_once $basePath . '/app/bootstrap.php';
 initialize($basePath);
@@ -24,6 +29,8 @@ if (!$message) {
 }
 
 $messages = new Messages();
-$messages->addMessage($message);
+$messageId = $messages->addMessage($message);
 
-// 
+// execute command controller
+$controller = new CommandController\Enter();
+$controller->home($messageId);

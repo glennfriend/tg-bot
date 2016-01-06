@@ -8,13 +8,18 @@
         "irazasyed/telegram-bot-sdk": "2.*",
         "nette/mail": "2.2.*",
 
-        "bridge": "*",
-        "AppController": "*"
+        "AppController": "*",
+        "CommandController": "*",
+        "bridge": "*"
     },
     "repositories": [
         {
             "type": "path",
             "url": "../app/AppController"
+        },
+        {
+            "type": "path",
+            "url": "../app/CommandController"
         },
         {
             "type": "path",

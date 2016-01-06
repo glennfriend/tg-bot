@@ -21,6 +21,7 @@ return array(
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
+    'CommandController\\' => array($vendorDir . '/CommandController'),
     'Bridge\\' => array($vendorDir . '/Bridge'),
     'AppController\\' => array($vendorDir . '/AppController'),
 );

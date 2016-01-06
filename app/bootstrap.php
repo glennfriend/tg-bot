@@ -43,13 +43,7 @@ function getDefaultSlimConfig()
     $container['notFoundHandler'] = function ($c) {
         return function ($request, $response) use ($c) {
 
-            $error = json_encode([
-                'error' => [
-                    'code'    => '4001',
-                    'message' => 'Page not found',
-                ]
-            ]);
-
+            $error = ErrorSupportHelper::getJson('4001');
             return $c['response']
                 ->withStatus(404)
                 ->withHeader('Content-Type', 'application/json')
