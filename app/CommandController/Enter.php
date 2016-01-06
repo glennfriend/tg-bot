@@ -1,5 +1,6 @@
 <?php
 namespace CommandController;
+use CommandController;
 use BotHelper;
 
 /**
@@ -16,15 +17,7 @@ class Enter
         $messages = new \Messages();
         $message = $messages->getMessage($id);
         $this->_validateMessage($message);
-
-        list($command, $content) = $message->parseCommand();
-        switch ($command) {
-            case 'help':
-                $controller = new \CommandController\ToHelp();
-                break;
-            default:
-                $controller = new \CommandController\ToDefault();
-        }
+        $controller = $this->_getController($message);
 
         $text = $controller->perform($message);
         if (!$text) {
@@ -37,6 +30,24 @@ class Enter
         if (!$messageId) {
             di('log')->record("send fail: message id = {$message->getId()}");
         }
+    }
+ 
+    // --------------------------------------------------------------------------------
+    // private
+    // --------------------------------------------------------------------------------
+
+    /**
+     *  route controller
+     */
+    protected function _getController($message)
+    {
+        list($command, $content) = $message->parseCommand();
+        switch ($command) {
+            case 'help':
+                return new CommandController\ToHelp();
+                break;
+        }
+        return new CommandController\ToDefault();
     }
 
     /**
