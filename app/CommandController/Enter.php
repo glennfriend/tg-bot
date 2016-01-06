@@ -61,7 +61,7 @@ class Enter
         if (!in_array($chatId, $allowIds)) {
             di('log')->record("message can not allow send to {$chatId} ({$message->getName()})");
 
-            // debug 使用 -> 如果不在予許的名單內, 發送警告訊息
+            // debug -> 如果不在予許的名單內, 發送警告訊息
             if (isTraining()) {
                 $userId = $message->getUserId();
                 $text   = '您不在白名單之內 by BOT';
