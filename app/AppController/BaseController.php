@@ -16,25 +16,23 @@ class BaseController
             throw new \Exception("API method '{$method}' is not exist!");
             exit;
         }
-        $this->loadFunctions($args);
+        $this->loadHelper($args);
         $this->$method();
     }
 
     /**
-     *  load functions, to help Api controller
+     *  load functions, to help controller
      *
-     *  這裡面包裹的程式, 如同只給 controller 使用的 function
-     *  由於 Api 性質的程式無 view
-     *  所以並不用處置 "這些 function 不應該被 view 使用" 的問題
+     *  裡面包裹的 help function
+     *  僅給 controller 使用
+     *  並不給予 view 使用
      */
-    protected function loadFunctions($args)
+    protected function loadHelper(Array $args)
     {
         $request  = $args[0];
         $response = $args[1];
         $args     = $args[2];
-        Tool\LoadFunctions::init($request, $response, $args);
+        Tool\LoadHelper::init($request, $response, $args);
     }
 
-
 }
-

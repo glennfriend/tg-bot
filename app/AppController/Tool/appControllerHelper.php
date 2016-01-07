@@ -2,31 +2,15 @@
 namespace AppController;
 
 // --------------------------------------------------------------------------------
-// warp Api tool functions
+// wrap controller help functions
 // --------------------------------------------------------------------------------
 
 /**
- *  get slim request
- */
-function getRequest()
-{
-    return Tool\LoadFunctions::$request;
-}
-
-/**
- *  get slim response
- */
-function getResponse()
-{
-    return Tool\LoadFunctions::$response;
-}
-
-/**
- *  取得 route 處理之後取得的參數
+ *  取得 route 處理之後獲得的參數
  */
 function attrib($key, $defaultValue=null)
 {
-    $val = getRequest()->getAttribute($key);
+    $val = Tool\LoadHelper::getRequest()->getAttribute($key);
     if (!$val) {
         $val = $defaultValue;
     }
@@ -44,6 +28,7 @@ function put($message)
     elseif (is_object($message)) {
         $message = json_encode($message);
     }
-    getResponse()->getBody()->write($message);
+    
+    Tool\LoadHelper::getResponse()->getBody()->write($message);
 }
 

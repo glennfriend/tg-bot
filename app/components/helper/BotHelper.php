@@ -28,7 +28,7 @@ class BotHelper
     // private
     // --------------------------------------------------------------------------------
 
-    protected static function getTelegram()
+    public static function getTelegram()
     {
         return new Telegram\Bot\Api(conf('bot.token'));
     }
