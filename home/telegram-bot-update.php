@@ -14,7 +14,7 @@ if (!isTraining()) {
     exit;
 }
 
-$telegram = new \Telegram\Bot\Api(conf('bot.token'));
+$telegram = BotHelper::getTelegram();
 try {
     $updates = $telegram->getUpdates();
 }
@@ -23,10 +23,19 @@ catch(\Telegram\Bot\Exceptions\TelegramResponseException $e) {
     return;
 }
 
-$messages = new Messages();
 $result = [];
+$messages = new Messages();
 foreach ($updates as $update) {
+
     $message = MessageHelper::makeMessageByTelegramUpdate($update);
+
+    // 從 updates 來的資料會有許多重覆資料
+    // 該確認之後再寫入
+    $existMessage = $messages->getMessageByMessageId($message->getMessageId());
+    if ($existMessage) {
+        continue;
+    }
+
     $id = $messages->addMessage($message);
     $result[] = $id;
 

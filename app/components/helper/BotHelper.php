@@ -1,11 +1,18 @@
 <?php
-use Telegram;
 
 /**
  *
  */
 class BotHelper
 {
+    /**
+     *
+     */
+    public static function getTelegram()
+    {
+        return new \Telegram\Bot\Api(conf('bot.token'));
+    }
+
     /**
      *  send message
      *  @return send message id or false
@@ -22,15 +29,6 @@ class BotHelper
         ];
         $response = self::getTelegram()->sendMessage($message);
         return $response->getMessageId();
-    }
-
-    // --------------------------------------------------------------------------------
-    // private
-    // --------------------------------------------------------------------------------
-
-    public static function getTelegram()
-    {
-        return new Telegram\Bot\Api(conf('bot.token'));
     }
 
 }
