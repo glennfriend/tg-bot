@@ -1,6 +1,6 @@
 <?php
 
-class ModuleSettingBase
+class PackageSettingBase
 {
     protected $store = array();
 

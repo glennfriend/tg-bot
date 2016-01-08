@@ -13,7 +13,6 @@ return array(
     'Message' => $baseDir . '/../app/models/Message.php',
     'MessageHelper' => $baseDir . '/../app/models/MessageHelper.php',
     'Messages' => $baseDir . '/../app/models/Messages.php',
-    'ModuleSettingBase' => $baseDir . '/../app/components/base/ModuleSettingBase.php',
     'Nette\\ArgumentOutOfRangeException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\DeprecatedException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\DirectoryNotFoundException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
@@ -59,6 +58,7 @@ return array(
     'Nette\\Utils\\Strings' => $vendorDir . '/nette/utils/src/Utils/Strings.php',
     'Nette\\Utils\\UnknownImageFileException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\Utils\\Validators' => $vendorDir . '/nette/utils/src/Utils/Validators.php',
+    'PackageSettingBase' => $baseDir . '/../app/components/base/PackageSettingBase.php',
     'ZendModel' => $baseDir . '/../app/models/ZendModel.php',
     'ZendModelWhiteListHelper' => $baseDir . '/../app/models/ZendModelWhiteListHelper.php',
 );

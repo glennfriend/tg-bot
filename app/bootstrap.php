@@ -1,6 +1,6 @@
 <?php
 
-function initialize($basePath, $moduleName)
+function initialize($basePath, $packageName)
 {
     error_reporting(-1);
     ini_set('html_errors','Off');
@@ -29,15 +29,15 @@ function initialize($basePath, $moduleName)
     date_default_timezone_set(conf('app.timezone'));
     diInit();
 
-    // load module setting
-    switch($moduleName)
+    // load Package
+    switch($packageName)
     {
         case 'home':
-            include __DIR__ . "/{$moduleName}-module-setting.php";
-
-            $moduleSetting = new ModuleSetting();
-            $moduleSetting->set('basePath', $basePath);
-            $moduleSetting->perform();
+      //case 'admin':
+            include_once "/{$basePath}/app/{$packageName}Package/PackageSetting.php";
+            $setting = new PackageSetting();
+            $setting->set('basePath', $basePath);
+            $setting->perform();
             break;
 
         default:
