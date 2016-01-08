@@ -11,8 +11,7 @@ class LoadHelper
         self::$request  = $request;
         self::$response = $response;
         self::$args     = $args;
-
-        include "appModuleHelper.php";
+        include "helper.php";
     }
 
     /**

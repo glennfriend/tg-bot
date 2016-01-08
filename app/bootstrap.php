@@ -29,16 +29,22 @@ function initialize($basePath, $moduleName)
     date_default_timezone_set(conf('app.timezone'));
     diInit();
 
-    // 各自決定 module 裡面所需載入的程式
-    $loader = new Composer\Autoload\ClassLoader();
+    // load module setting
     switch($moduleName)
     {
         case 'home':
-            $loader->addPsr4('AppModule\\',     __DIR__ . "/AppModule/");
-            $loader->addPsr4('CommandModule\\', __DIR__ . "/CommandModule/");
+            include __DIR__ . "/{$moduleName}-module-setting.php";
+
+            $moduleSetting = new ModuleSetting();
+            $moduleSetting->set('basePath', $basePath);
+            $moduleSetting->perform();
             break;
+
+        default:
+            throw new Exception('Warning! setting file error!'); 
+            exit;
     }
-    $loader->register(true);
+
 }
 
 function getDefaultSlimConfig()

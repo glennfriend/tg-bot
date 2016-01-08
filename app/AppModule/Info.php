@@ -6,7 +6,7 @@ use ErrorSupportHelper;
 /**
  *
  */
-class Info extends BaseController
+class Info extends Tool\BaseController
 {
 
     /**

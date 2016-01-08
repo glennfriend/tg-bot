@@ -1,5 +1,5 @@
 <?php
-namespace AppModule;
+namespace AppModule\Tool;
 
 /**
  *
@@ -32,7 +32,7 @@ class BaseController
         $request  = $args[0];
         $response = $args[1];
         $args     = $args[2];
-        Tool\LoadHelper::init($request, $response, $args);
+        LoadHelper::init($request, $response, $args);
     }
 
 }

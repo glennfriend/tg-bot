@@ -13,6 +13,7 @@ return array(
     'Message' => $baseDir . '/../app/models/Message.php',
     'MessageHelper' => $baseDir . '/../app/models/MessageHelper.php',
     'Messages' => $baseDir . '/../app/models/Messages.php',
+    'ModuleSettingBase' => $baseDir . '/../app/components/base/ModuleSettingBase.php',
     'Nette\\ArgumentOutOfRangeException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\DeprecatedException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\DirectoryNotFoundException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',

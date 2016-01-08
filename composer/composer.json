@@ -19,9 +19,9 @@
     "autoload": {
         "classmap": [
             "../app/models",
+            "../app/components/base",
             "../app/components/helper",
-            "../app/components/manager",
-            "../app/components/module"
+            "../app/components/manager"
         ]
     }
 }

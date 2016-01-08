@@ -41,6 +41,8 @@ Service
     有可能需要認證
     有可能是事前已認證, 只要在程式中設定 API 相關 path, account, password...
 
+Base
+    一個用來被繼承用的 base class
+
 ccHelper
     view helper only
-
