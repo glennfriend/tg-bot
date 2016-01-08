@@ -1,6 +1,6 @@
 <?php
 
-function initialize($basePath)
+function initialize($basePath, $moduleName)
 {
     error_reporting(-1);
     ini_set('html_errors','Off');
@@ -29,6 +29,16 @@ function initialize($basePath)
     date_default_timezone_set(conf('app.timezone'));
     diInit();
 
+    // 各自決定 module 裡面所需載入的程式
+    $loader = new Composer\Autoload\ClassLoader();
+    switch($moduleName)
+    {
+        case 'home':
+            $loader->addPsr4('AppModule\\',     __DIR__ . "/AppModule/");
+            $loader->addPsr4('CommandModule\\', __DIR__ . "/CommandModule/");
+            break;
+    }
+    $loader->register(true);
 }
 
 function getDefaultSlimConfig()

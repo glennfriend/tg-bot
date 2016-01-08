@@ -4,25 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "88ec3de7e8e6c6b74e54ec68d3cba8b2",
-    "content-hash": "8f2e4b956c6189d5bf56ffed2f2e67bd",
+    "hash": "4253a21f00fc1050a33ce523cfdd942f",
+    "content-hash": "5b3ad63d83bc14e5b6587ed244eeb39c",
     "packages": [
-        {
-            "name": "AppController",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "../app/AppController/",
-                "reference": "2567c8e6268dec1ca7aca8c1b9dbc5ea",
-                "shasum": null
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "AppController\\": ""
-                }
-            }
-        },
         {
             "name": "Bridge",
             "version": "1.0.0",
@@ -36,22 +20,6 @@
             "autoload": {
                 "psr-4": {
                     "Bridge\\": ""
-                }
-            }
-        },
-        {
-            "name": "CommandController",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "../app/CommandController/",
-                "reference": "2c46cd550debf823ad96f3c7bf309047",
-                "shasum": null
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CommandController\\": ""
                 }
             }
         },
@@ -392,7 +360,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.2.6",
+            "version": "v5.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -434,16 +402,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.2.6",
+            "version": "v5.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "7be481e742f527a5c4bc84e967bd06a31f50ec0e"
+                "reference": "6d8dec02825299b0ad47712564e9d33104e148c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/7be481e742f527a5c4bc84e967bd06a31f50ec0e",
-                "reference": "7be481e742f527a5c4bc84e967bd06a31f50ec0e",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/6d8dec02825299b0ad47712564e9d33104e148c4",
+                "reference": "6d8dec02825299b0ad47712564e9d33104e148c4",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +454,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2015-12-29 14:47:47"
+            "time": "2016-01-07 11:02:28"
         },
         {
             "name": "irazasyed/telegram-bot-sdk",

@@ -1,5 +1,5 @@
 <?php
-namespace AppController;
+namespace AppModule;
 
 /**
  *

@@ -6,7 +6,7 @@
  */
 $basePath = dirname(__DIR__);
 require_once $basePath . '/app/bootstrap.php';
-initialize($basePath);
+initialize($basePath, 'home');
 
 $input = file_get_contents("php://input");
 $data = json_decode($input, true);
@@ -32,5 +32,5 @@ $messages = new Messages();
 $messageId = $messages->addMessage($message);
 
 // execute command controller
-$controller = new CommandController\Enter();
+$controller = new CommandModule\Enter();
 $controller->home($messageId);

@@ -7,7 +7,7 @@
  */
 $basePath = dirname(__DIR__);
 require_once $basePath . '/app/bootstrap.php';
-initialize($basePath);
+initialize($basePath, 'home');
 
 if (!isTraining()) {
     echo ErrorSupportHelper::getJson('4002');
@@ -41,7 +41,7 @@ foreach ($updates as $update) {
 
     // execute command controller
     if ($id) {
-        $controller = new \CommandController\Enter();
+        $controller = new \CommandModule\Enter();
         $controller->home($id);
     }
 }

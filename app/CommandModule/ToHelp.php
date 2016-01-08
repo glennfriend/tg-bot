@@ -1,5 +1,5 @@
 <?php
-namespace CommandController;
+namespace CommandModule;
 
 /**
  *

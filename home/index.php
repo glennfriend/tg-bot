@@ -2,7 +2,7 @@
 
 $basePath = dirname(__DIR__);
 require_once $basePath . '/app/bootstrap.php';
-initialize($basePath);
+initialize($basePath, 'home');
 
 /*
     TODO: 請考慮改成以下方式
@@ -10,10 +10,9 @@ initialize($basePath);
         - ajax    時輸出 json type (使用狀態)
 */
 $app = new Slim\App(getDefaultSlimConfig());
-$app->get('/just-test',             'AppController\JustTest:hello');
-$app->get('/just-test-send',        'AppController\JustTest:send');
-$app->get('/set-webhook/{status}',  'AppController\Setting:webhook');
-$app->get('/list',                  'AppController\Info:getItems');
-$app->get('/info',                  'AppController\Info:about');
+$app->get('/just-test',             'AppModule\JustTest:hello');
+$app->get('/just-test-send',        'AppModule\JustTest:send');
+$app->get('/set-webhook/{status}',  'AppModule\Setting:webhook');
+$app->get('/info',                  'AppModule\Info:about');
 
 $app->run();

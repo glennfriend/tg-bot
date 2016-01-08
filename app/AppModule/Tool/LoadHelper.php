@@ -1,5 +1,5 @@
 <?php
-namespace AppController\Tool;
+namespace AppModule\Tool;
 
 class LoadHelper
 {
@@ -12,7 +12,7 @@ class LoadHelper
         self::$response = $response;
         self::$args     = $args;
 
-        include "appControllerHelper.php";
+        include "appModuleHelper.php";
     }
 
     /**

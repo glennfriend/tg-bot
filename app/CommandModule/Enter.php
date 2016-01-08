@@ -1,6 +1,6 @@
 <?php
-namespace CommandController;
-use CommandController;
+namespace CommandModule;
+use CommandModule;
 use BotHelper;
 
 /**
@@ -44,10 +44,10 @@ class Enter
         list($command, $content) = $message->parseCommand();
         switch ($command) {
             case 'help':
-                return new CommandController\ToHelp();
+                return new CommandModule\ToHelp();
                 break;
         }
-        return new CommandController\ToDefault();
+        return new CommandModule\ToDefault();
     }
 
     /**

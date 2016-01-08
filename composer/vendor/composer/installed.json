@@ -990,8 +990,8 @@
     },
     {
         "name": "illuminate/contracts",
-        "version": "v5.2.6",
-        "version_normalized": "5.2.6.0",
+        "version": "v5.2.7",
+        "version_normalized": "5.2.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/contracts.git",
@@ -1034,17 +1034,17 @@
     },
     {
         "name": "illuminate/support",
-        "version": "v5.2.6",
-        "version_normalized": "5.2.6.0",
+        "version": "v5.2.7",
+        "version_normalized": "5.2.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/support.git",
-            "reference": "7be481e742f527a5c4bc84e967bd06a31f50ec0e"
+            "reference": "6d8dec02825299b0ad47712564e9d33104e148c4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/support/zipball/7be481e742f527a5c4bc84e967bd06a31f50ec0e",
-            "reference": "7be481e742f527a5c4bc84e967bd06a31f50ec0e",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/6d8dec02825299b0ad47712564e9d33104e148c4",
+            "reference": "6d8dec02825299b0ad47712564e9d33104e148c4",
             "shasum": ""
         },
         "require": {
@@ -1061,7 +1061,7 @@
             "symfony/process": "Required to use the composer class (2.8.*|3.0.*).",
             "symfony/var-dumper": "Improves the dd function (2.8.*|3.0.*)."
         },
-        "time": "2015-12-29 14:47:47",
+        "time": "2016-01-07 11:02:28",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1089,41 +1089,5 @@
         ],
         "description": "The Illuminate Support package.",
         "homepage": "http://laravel.com"
-    },
-    {
-        "name": "AppController",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "dist": {
-            "type": "path",
-            "url": "../app/AppController/",
-            "reference": "2567c8e6268dec1ca7aca8c1b9dbc5ea",
-            "shasum": null
-        },
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "AppController\\": ""
-            }
-        }
-    },
-    {
-        "name": "CommandController",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "dist": {
-            "type": "path",
-            "url": "../app/CommandController/",
-            "reference": "2c46cd550debf823ad96f3c7bf309047",
-            "shasum": null
-        },
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "CommandController\\": ""
-            }
-        }
     }
 ]
