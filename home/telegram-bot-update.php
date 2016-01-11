@@ -37,7 +37,10 @@ foreach ($updates as $update) {
     }
 
     $id = $messages->addMessage($message);
-    $result[] = $id;
+    $result[] = [
+        $message->getMessageId(),
+        $id
+    ];
 
     // execute command controller
     if ($id) {
