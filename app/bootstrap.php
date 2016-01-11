@@ -27,7 +27,6 @@ function initialize($basePath, $packageName)
     }
 
     date_default_timezone_set(conf('app.timezone'));
-    diInit();
 
     // load Package
     switch($packageName)
@@ -106,7 +105,6 @@ function pr($data, $writeLog=false)
     }
 }
 
-
 /**
  *  包裝了 Symfony Dependency-Injection
  *  提供了簡易的取用方式 DI->get( $service )
@@ -123,32 +121,4 @@ function di($getParam=null)
 
     $container = new Symfony\Component\DependencyInjection\ContainerBuilder();
     return $container;
-}
-
-/**
- *  @see https://github.com/symfony/dependency-injection
- *  @see http://symfony.com/doc/current/components/dependency_injection/factories.html
- *  @see http://symfony.com/doc/current/components/dependency_injection/introduction.html
- */
-function diInit()
-{
-    // $basePath = conf('app.path');
-
-    $di = di();
-    $di->setParameter('app.path', conf('app.path') );
-
-    /*
-    $di->register('abc', 'Lib\Abc')
-        ->addArgument('%app.path%');                    // __construct
-        ->setProperty('setDb', [new Reference('db')]);  // ??
-    */
-
-    // log & log folder
-    $di->register('log', 'Bridge\Log')
-        ->addMethodCall('init', ['%app.path%/var']);
-
-    // cache
-    $di->register('cache', 'Bridge\Cache')
-        ->addMethodCall('init', ['%app.path%/var/cache']);
-
 }
