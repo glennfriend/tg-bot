@@ -3,10 +3,10 @@ $token = '999999999:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
 get id info
     https://api.telegram.org/bot???:??????/getMe
 
-�o�e�T��
+發送訊息
     https://api.telegram.org/bot???:??????/sendMessage?chat_id=xxxxxx&text=hello
 
-���o�Ҧ��o�e�� bot �� �T��
+取得所有發送到 bot 的 訊息
     https://api.telegram.org/bot???:??????/getUpdates
 
 set hook
@@ -14,6 +14,12 @@ set hook
 delete hook
     https://api.telegram.org/bot???:??????/setWebhook?url=
 
-�]�w certificate ���覡, .crt or .pem (fail)
+設定 certificate 的方式, .crt or .pem (fail)
     curl -F "url=https://xxxx/xx.php" -F "certificate=@file.pem" https://api.telegram.org/xxxx/setWebhook
 
+
+about bot
+    與 bot 對話:
+        - 對 bot 輸入的任何資料都會傳送到 [getUpdates], 例如 hello
+    把 bot 加入群組之後對話:
+        - 對群組中的 bot 輸入的資料, 只有指令才會傳送到 [getUpdates], 例如 /alert hello
